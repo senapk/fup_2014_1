@@ -16,12 +16,12 @@ bool eh_consoante(char letra){
 }
 
 //retornar a soma dos primeiros n numeros que sao divisiveis por 2 e por 5 mais não sao por 3
-int soma_primeiros_25n3(){
+int soma_primeiros_25n3(int n){
     return 0;
 }
 
 //contar quantos caracters unicos existem no nome
-int contar_unicos(char *nome){
+int contar_unicos(const char *nome){
     return 0;
 }
 
