@@ -13,7 +13,7 @@ int main()
         float vet[] = {3, 4, 5, 6, 7};
         t.add(qtd_contar_menores_media(vet, 5) == 2);
         float vet2[] = {3, 4, 5, 6, 7, 2000};
-        t.add(qtd_contar_menores_media(vet, 6) == 5);
+        t.add(qtd_contar_menores_media(vet2, 6) == 5);
         t.close();
     }
     {
@@ -25,11 +25,11 @@ int main()
     }
     {
         t.open("consoante", 2);
-        t.add(eh_vogal('z') == true);
-        t.add(eh_vogal('B') == true);
-        t.add(eh_vogal('i') == false);
-        t.add(eh_vogal('O') == false);
-        t.add(eh_vogal('a') == false);
+        t.add(eh_consoante_('z') == true);
+        t.add(eh_consoante('B') == true);
+        t.add(eh_consoante('i') == false);
+        t.add(eh_consoante('O') == false);
+        t.add(eh_consoante('a') == false);
         t.close();
     }
     {
