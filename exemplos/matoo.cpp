@@ -4,10 +4,12 @@
 
 using namespace std;
 
-struct Matriz{
+class Matriz{
+private:
     int nl, nc;
     int *mat;
 
+public:
     //inicializar o vetor que representa os elementos
     void init(int _nl, int _nc){
         nl = _nl;

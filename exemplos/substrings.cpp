@@ -3,6 +3,10 @@
 
 using namespace std;
 
+//a pipos pip pipoc pipoca eh doce#
+                                 //pipoca#
+
+
 //verifica se o menor está na posicao pos do menor
 bool subachei( char maior[], char menor[], int pos)
 {
@@ -14,22 +18,51 @@ bool subachei( char maior[], char menor[], int pos)
 }
 
 //conta quantas vezes a menor aparece no menor
-int substrings(char maior[], char menor[])
+void substring(char maior[], char menor[],
+               int &qtd, int vet[])
 {
-	int tmaior = strlen(maior);
-	int tmenor = strlen(menor);
-	int achei = 0;
-	for(int i = 0; i <= tmaior - tmenor; i++)
-		if(subachei(maior, menor, i))
-			achei++;
-	return achei;
+    int tmaior = strlen(maior);
+    int tmenor = strlen(menor);
+    qtd = 0;
+    for(int i = 0; i <= tmaior - tmenor; i++)
+        if(subachei(maior, menor, i))
+        {
+            vet[qtd] = i;
+            qtd++;
+        }
 }
 
+//conta quantas vezes a menor aparece no menor
+//crie o vetor de posicoes do tamanho correto
+//e retorne o vetor
+int * substr_din(char maior[], char menor[], int &qtd)
+{
+    int tmaior = strlen(maior);
+    int tmenor = strlen(menor);
+    qtd = 0;
+    for(int i = 0; i <= tmaior - tmenor; i++)
+        if(subachei(maior, menor, i))
+            qtd++;
+
+    int *vet = new int[qtd];
+
+    int cont = 0;
+    for(int i = 0; i <= tmaior - tmenor; i++)
+        if(subachei(maior, menor, i))
+            vet[cont++] = i;
+    return vet;
+}
 
 int main(){
 	char maior[] = "abatatadamataehchatafeitoata";
 	char menor[] = "ata";
-	cout << substrings(maior, menor);
+    int qtd;
+    //int vet[100];
+    int *vet = substr_din(maior, menor, qtd);
+    cout << qtd << "  " ;
+    for (int i = 0; i < qtd; i++)
+        cout << vet[i] << " ";
+    delete [] vet;
 	return 0;
 
 }
