@@ -15,13 +15,18 @@ int main(int argc, char ** argv){
     }
     //argv[0] nome do programa
     //argv[1]
-    ifstream entrada(argv[1]);
+
+    //ifstream entrada(argv[1]);
+    ifstream entrada;
+    entrada.open(argv[1]);
 
     string linha;
     while(entrada){
         getline(entrada, linha);
         cout << linha << endl;
     }
+
+    entrada.close();
     return 0;
 }
 

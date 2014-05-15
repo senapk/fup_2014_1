@@ -16,13 +16,17 @@ int main(int argc, char ** argv){
 
     string palavras[2000];
     int ind = 0;
+    char ch;
     while(!input_file.fail()){
-        input_file >> palavras[ind];
-        ind++;
+        input_file >> noskipws >> ch;
+        if(ch == ',' || ch == '\n')
+            ind++;
+        else
+            palavras[ind] = palavras[ind]  + ch;
     }
 
-    for (int i = 0; i < ind; i++)
-        cout << palavras[i] << " ";
+    for(int i = 0; i < ind; i++)
+        cout << palavras[i] << endl;
 
     return 0;
 }
