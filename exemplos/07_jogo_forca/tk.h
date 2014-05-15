@@ -7,7 +7,7 @@
 
 #ifndef TKIP_H
 #define TKIP_H
-
+extern "C" {
 /* Muda a cor da letra
  * r,g,b,y,c,m,k,w para cores claras
  * R,G,B,Y,C,M,K,W para cores escuras */
@@ -21,6 +21,9 @@ void tk_clear();
  * ex:  k_write(12,6,"%d %c", idade, sexo); */
 void tk_write(int x, int y, const char *format, ...);
 
+//Move o cursor para essa posicao da tela
+void tk_move(int x, int y);
+
 /* Se houver alguma tecla no teclado ele retorna a tecla,
  * caso contrário, retorna 0  */
 int tk_peek(void);
@@ -32,7 +35,7 @@ int tk_wait(void);
 void tk_sleep(int msec);
 
 /* Retorna um número aleatorio */
-int  tkm_rand();
+int  tk_rand();
 
 /* Toca um mp3 se tiver o programa mpg123 instalado */
 void tk_mp3_play(char *path);
@@ -49,8 +52,9 @@ const char * tk_info_colors();
  * sena.ufc@gmail.com
  *
  */
-
+#ifndef __cplusplus
 #define _POSIX_C_SOURCE	199309L
+#endif
 #include <stdlib.h>//rand e srand
 #include <stdio.h>
 #include <unistd.h>
@@ -126,6 +130,12 @@ const char * tk_info_colors(){
 
 void tk_clear(){
     puts("\033[2J");
+}
+
+void tk_move(int x, int y){
+    char msg[1000];
+    sprintf(msg,"\033[%d;%dH",y,x);
+    printf("%s",msg);
 }
 
 void tk_write(int x, int y, const char *format, ...)
@@ -221,7 +231,7 @@ void tk_sleep(int msec)
     //usleep(1000*msec);
 }
 
-int tkm_rand()
+int tk_rand()
 {
     static int init = 1;
     if(init) {
@@ -242,7 +252,6 @@ void tk_mp3_stop(char *path){
     sprintf(c,"ps aux  | grep \"mpg123 %s\" |head -1|  awk '{ print $2; }' | xargs kill -9 2>/dev/null 1>/dev/null&",path);
     system(c);
 }
-
+} //extern C
 #endif
-
 /* EOF */
