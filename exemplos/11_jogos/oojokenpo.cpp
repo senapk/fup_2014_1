@@ -4,43 +4,59 @@
 
 using namespace std;
 
+enum Resultado{GANHOU, PERDEU, EMPATOU};
+
 struct TipoJogo{
     string *vet;
     int tam;
     int dist;
+
+    TipoJogo(int nivel){
+        if(nivel == 1){
+            tam = 3;
+            dist = 1;
+            vet = new string[3];
+            vet[0] = "pedra";
+            vet[1] = "tesoura";
+            vet[2] = "papel";
+        }
+        if(nivel == 2){
+            tam = 5;
+            dist = 2;
+            vet = new string[5];
+            vet[0] = "pedra";
+            vet[1] = "tesoura";
+            vet[2] = "lagarto";
+            vet[3] = "papel";
+            vet[4] = "spock";
+        }
+    }
+    ~TipoJogo(){
+        delete [] vet;
+    }
+
+
+    Resultado resultado_de_A(int A, int B){
+        if(A == B)
+            return EMPATOU;
+        if(B < A)
+            B += tam; //colocando B na frente de A
+        if ((A + dist) >= B)
+            return GANHOU;
+        return PERDEU;
+    }
+
 };
 
 
 //
-TipoJogo carregaJogo(int nivel){
-    TipoJogo jogo;
-    if(nivel == 1){
-        jogo.tam = 3;
-        jogo.dist = 1;
-        jogo.vet = new string[3];
-        jogo.vet[0] = "pedra";
-        jogo.vet[1] = "tesoura";
-        jogo.vet[2] = "papel";
-    }
-    if(nivel == 2){
-        jogo.tam = 5;
-        jogo.dist = 2;
-        jogo.vet = new string[5];
-        jogo.vet[0] = "pedra";
-        jogo.vet[1] = "tesoura";
-        jogo.vet[2] = "lagarto";
-        jogo.vet[3] = "papel";
-        jogo.vet[4] = "spock";
-    }
-    return jogo;
-}
 
 int escolha_computador(int tam){
     return rand() % tam;
 }
 
 //retorna indice no vetor de jogo
-int perguntar_usuario(TipoJogo jogo){
+int perguntar_usuario(const TipoJogo &jogo){
     cout << "Escolha um numero abaixo, que corresponda";
     cout << "a sua opcao: " << endl;
 
@@ -54,17 +70,6 @@ int perguntar_usuario(TipoJogo jogo){
     return opcao;
 }
 
-enum Resultado{GANHOU, PERDEU, EMPATOU};
-
-Resultado resultado_de_A(int A, int B, TipoJogo jogo){
-    if(A == B)
-        return EMPATOU;
-    if(B < A)
-        B += jogo.tam; //colocando B na frente de A
-    if ((A + jogo.dist) >= B)
-        return GANHOU;
-    return PERDEU;
-}
 
 int opcao_inicial(){
     int opcao = 0;
@@ -77,13 +82,15 @@ int opcao_inicial(){
 int main(){
     srand(time(NULL));
     int opcao = opcao_inicial();
-    TipoJogo jogo = carregaJogo(opcao);
+
+    TipoJogo jogo(opcao);
+
     int opUsuario = perguntar_usuario(jogo);
     int opPc =  escolha_computador(jogo.tam);
 
     cout << "Voce escolheu " << jogo.vet[opUsuario] << endl;
     cout << "Pc escolheu " << jogo.vet[opPc] << endl;
-    Resultado res = resultado_de_A(opUsuario, opPc, jogo);
+    Resultado res = jogo.resultado_de_A(opUsuario, opPc);
     if(res == GANHOU)
         cout << "voce ganhou" << endl;
     if(res == PERDEU)
