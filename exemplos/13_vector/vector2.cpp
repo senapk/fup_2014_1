@@ -11,6 +11,7 @@ int main(){
         cout << vetor[i] << endl;
     }
 
+    //g++ -std=c++11
     for( string &nome : vetor){
         cout << nome << endl;
     }
