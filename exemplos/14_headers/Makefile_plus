@@ -1,0 +1,6 @@
+all: calc.o main.o
+	g++ -Wall calc.o main.o -o main
+calc.o: calc.cpp
+	g++ -Wall -c calc.cpp
+main.o: main.cpp
+	g++ -Wall -c main.cpp
