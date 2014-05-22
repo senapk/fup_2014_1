@@ -41,6 +41,9 @@ void show(string vet[], int tam, bool com_numero, int tam_grupo){
 
 int main(){
     srand(time(NULL));
+    
+    ifstream nomes;
+    
     string vet[] = {"david", "matheus", "jairo", "dejaime", "guilherme",
                     "leonardo", "isrhael", "monick", "ianka", "mikael",
                     "neto", "iago", "hugo", "debora", "camila"};
