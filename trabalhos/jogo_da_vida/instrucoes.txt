@@ -1,0 +1,8 @@
+Orientacões e Pontuação
+
+1. Fazer um programa que simule as regras do Game Of Life de Conray.
+2. O programa deve ser capaz de ler automatos de um arquivos via menu ou via argumento.
+3. O programa deve estar bem dividido em funções e usar o mínimo de variáveis globais.
+
+4. O programa deve ser capaz de salvar o estado atual de uma geração em um arquivo.
+
