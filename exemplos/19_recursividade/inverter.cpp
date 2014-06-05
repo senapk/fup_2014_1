@@ -1,3 +1,4 @@
+//So lembrando que esse codigo so funciona se for utilizada a flag -std=c++11
 #include <iostream>
 #include <algorithm>
 #include <vector>
