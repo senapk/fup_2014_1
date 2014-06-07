@@ -1,0 +1,52 @@
+As questões abaixo são retiradas do site http://projecteuler.net/ e traduzidas com google tradutor.
+
+1) Múltiplos de 3 e 5
+Se listar todos os números naturais abaixo de 10 que são múltiplos de 3 ou 5, temos 3, 5, 6 e 9. A soma desses múltiplos é 23.
+Determine a soma de todos os múltiplos de 3 ou 5, inferior a 1000.
+
+2) Ainda Fibonnacci
+Cada novo termo na seqüência de Fibonacci é gerada pela soma dos dois termos anteriores. Ao iniciar com um e dois, dos 10 primeiros termos são os seguintes:
+    1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
+Considerando os termos da sequência de Fibonacci cujos valores não ultrapassam quatro milhões, encontrar a soma dos termos, mesmo com valor.
+
+3) Maior fator primo
+Os fatores primos de 13195 são 5, 7, 13 e 29.
+
+Qual é o maior fator primo do número 600851475143?
+
+4) Maior palindome produto
+Um número palíndromo lê da mesma maneira tanto. A maior palíndromo feito a partir do produto de dois números de dois dígitos é 9009 = 91 ×99.
+Encontrar o maior palíndromo feito a partir do produto de dois números de 3 dígitos.
+
+5) O menor múltiplo
+2520 é o número mais pequeno que pode ser dividida por cada um dos números de 1 a 10 sem qualquer restante.
+Qual é o menor número positivo que é divisível por todos os números de 1 a 20?
+
+6) Diferenca da soma dos quadrados
+A soma dos quadrados dos primeiros dez números naturais é,
+
+    1^2 + 2^2 + ... + 10^2 = 385
+O quadrado da soma dos primeiros dez números naturais é,
+
+(1 + 2 + ... + 10)^2 = 55^2 = 3025
+Daí a diferença entre a soma dos quadrados dos primeiros dez números naturais eo quadrado da soma é 3025 -385 = 2640.
+Determinar a diferença entre a soma dos quadrados dos primeiros cem números naturais e o quadrado da soma.
+
+
+7) Primo 10 001
+Ao listar os seis primeiros números primos: 2, 3, 5, 7, 11 e 13, podemos ver que o sexto principal é 13.
+
+Qual é o número primo 10 001?
+
+8) No arquivo ./08_oiler_num.txt existe um número de 1000 dígitos. Os quatro números adjacentes que possuem o maior produto
+é o número 9x9x8x9 = 5832. Ele está na posição 616. Encontro o número de 13 dígitos adjacentes que possui o maior produto.
+Qual é o valor desse produto?
+
+9) Trio de Pitágoras especial
+Um trio de Pitágoras é um conjunto de três números naturais, a < b  < c , para a qual,
+
+a^2 + b^2 = c^2
+Por exemplo, 3^2 + 4^2 = 9 + 16 = 25 = 5^2 .
+
+Existe exatamente um trio de Pitágoras para o qual a + b + c = 1000. 
+Encontre o produto abc desse trio.
