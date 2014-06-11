@@ -7,7 +7,7 @@ Determine a soma de todos os múltiplos de 3 ou 5, inferior a 1000.
 2) Ainda Fibonnacci
 Cada novo termo na seqüência de Fibonacci é gerada pela soma dos dois termos anteriores. Ao iniciar com um e dois, dos 10 primeiros termos são os seguintes:
     1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
-Considerando os termos da sequência de Fibonacci cujos valores não ultrapassam quatro milhões, encontrar a soma dos termos, mesmo com valor.
+Considerando os termos da sequência de Fibonacci cujos valores não ultrapassam quatro milhões, encontrar a soma dos termos pares.
 
 3) Maior fator primo
 Os fatores primos de 13195 são 5, 7, 13 e 29.
