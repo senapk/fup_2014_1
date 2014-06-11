@@ -32,7 +32,7 @@ void test_fname()
     t_open("fname", 3);
     t_add(fname({1, 0}) == 10);
     t_add(fname({1, 10, 10}) == 11010);
-    t_add(fname({25, 37, 50, 9}) == 25, 37, 50, 9);
+    t_add(fname({25, 37, 50, 9}) == 2537509);
     t_close();
 }
 
