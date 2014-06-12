@@ -5,6 +5,7 @@
 
 //__tag__ include
 #include <iostream>
+#include <vector>
 #include "engine.h" //faca o download em github.com/senapk/fup
 using namespace std;
 
@@ -17,7 +18,6 @@ using namespace std;
 // deve colocar o caractere hided passado por parametro. Se nas palavras
 // ouver pontuação ou espaço, voce deve imprimi-los corretametente. Se
 // a letra for maiuscula, voce deve imprimir maiuscula.
-}
 // Ex:  palavra        ,   chutes         , hided  -> saida
 // Ex: "Abacaxi"       ,  "axnpqe"        , '-'    -> "A-a-ax-"
 // Ex: "extraordinario",  "aeioubcdfgh"   , '*'    -> "e***ao*di*a*io"

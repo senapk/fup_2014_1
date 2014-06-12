@@ -5,6 +5,7 @@
 
 //__tag__ include
 #include <iostream>
+#include <vector>
 #include "engine.h" //faca o download em github.com/senapk/fup
 using namespace std;
 
